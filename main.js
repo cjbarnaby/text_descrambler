@@ -57,6 +57,7 @@ $(document).ready(function() {
         $notice.text("");
       });
       $scramble.text($input.val());
+      var values = getValues();
       $scramble.scramble(values.duration, values.interval, values.characterSet, values.uppercase);
 
     } else {
