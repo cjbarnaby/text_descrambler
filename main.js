@@ -32,7 +32,7 @@ $(document).ready(function() {
 // LISTENERS
   $buttons.on("click", function() {
     if ($(this).attr("value") === "scramble") {
-      $scramble.text($input.val());
+      $scramble.text($input.val() === "" ? "Text deScrambler" : $input.val());
       var values = getValues();
       $scramble.scramble(values.duration, values.interval, values.characterSet, values.uppercase);
     } else if ($(this).attr("value") === "options") {
@@ -56,7 +56,7 @@ $(document).ready(function() {
       $notice.fadeOut(500, function() {
         $notice.text("");
       });
-      $scramble.text($input.val());
+      $scramble.text($input.val() === "" ? "Text deScrambler" : $input.val());
       var values = getValues();
       $scramble.scramble(values.duration, values.interval, values.characterSet, values.uppercase);
 
