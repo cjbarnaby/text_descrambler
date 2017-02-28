@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="dist/textscrambler.min.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="input-section">
+      <input type="text" class="input" placeholder="Type Stuff. Press Enter." maxlength=15>
+      <div class="buttons-box">
+        <div class="input button" value="scramble">scramble</div>
+        <div class="input button" value="options">options</div>
+      </div>
+      <div class="options-box">
+        <div class="options-group">
+          <label for="duration">duration</label>
+          <br>
+          <input type="range" class="duration" value="3000" min="200" max="20000">
+          <br>
+          <label for="interval">interval</label>
+          <br>
+          <input type="range" class="interval" value="20" min="5" max="1000">
+          <br>
+          <form class="radio-buttons">
+            <label for="uppercase">uppercase</label>
+            <br>
+            <input type="radio" name="uppercase" value="true" checked="checked">true</br>
+            <input type="radio" name="uppercase" value="false">false</br>
+          </form>
+        </div>
+        <div class="options-group">
+          <form class="radio-buttons">
+            <label for="character-set">character set</label><br>
+            <input type="radio" name="character-set" value="all">all<br>
+            <input type="radio" name="character-set" value="alphabet" checked="checked">alphabet<br>
+            <input type="radio" name="character-set" value="numbers">numbers<br>
+            <input type="radio" name="character-set" value="alphanumeric">alphanumeric<br>
+            <input type="radio" name="character-set" value="punctuation">punctuation<br>
+          </form>
+        </div>
+      </div>
+      <p class="notice"></p>
+    </div>
+
+    <p class="scramble">Text deScrambler</p>
+
+  </div>
+
+</body>
+</html>
+
+
+numbers: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+alphabet: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
+punctuation: ["@", "#", "$", "%", "^", "*", "(", ")", "&", "+", "=", "}", "{", "|", ":", ";", ">", "<", "?", "~", " "],
+get alphanumeric() {
+  return this.numbers.concat(this.alphabet);
+},
+get all() {
+  return this.alphanumeric.concat(this.punctuation);
+}
+};

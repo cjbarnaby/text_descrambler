@@ -1,0 +1,94 @@
+body {
+  background-color: rgba(41, 45, 52, 1);
+  color: rgba(203, 203, 203, 1);
+  font-family: monospace;
+}
+
+.container {
+  height: 100vh;
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.scramble {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  width: 100%;
+  margin: 0;
+}
+
+.input-section {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.input {
+  text-align: center;
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+  font-family: monospace;
+}
+
+.buttons-box {
+  margin-top: 5px;
+
+}
+
+.button {
+  display: inline-block;
+  height: 20px;
+  width: 80px;
+  background-color: rgba(255, 255, 255, 0.2);
+  line-height: 20px;
+  font-size: 0.8em;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.button:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.flyoutBox {
+
+}
+
+.notice {
+  display: none;
+}
+
+label {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.options-group {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.options-box {
+  margin-top: 10px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 100px 30px 20px 30px;
+  position: relative;
+  top: -370px;
+  z-index: -1;
+  min-width: 330px;
+}
+
+input {
+  margin-top: 10px;
+}
