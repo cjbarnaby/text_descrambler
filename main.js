@@ -31,10 +31,12 @@ $(document).ready(function() {
 
 // LISTENERS
   $buttons.on("click", function() {
+    // SCRAMBLE button
     if ($(this).attr("value") === "scramble") {
       $scramble.text($input.val() === "" ? "Text deScrambler" : $input.val());
       var values = getValues();
       $scramble.scramble(values.duration, values.interval, values.characterSet, values.uppercase);
+      // OPTIONS button
     } else if ($(this).attr("value") === "options") {
       if (!optionsOpen) {
         $options.animate({
@@ -50,6 +52,7 @@ $(document).ready(function() {
     }
   });
 
+  // ENTER keydown
   $input.on("keydown", function(e) {
     if (e.keyCode === 13) {
 
@@ -61,7 +64,7 @@ $(document).ready(function() {
       $scramble.scramble(values.duration, values.interval, values.characterSet, values.uppercase);
 
     } else {
-      if ($input.val().length > 14) {
+      if ($input.val().length > 18) {
         $notice.text("Just press enter, already.");
         $notice.fadeIn();
       }
