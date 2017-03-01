@@ -1,11 +1,11 @@
 ## Text deScrambler - A jQuery Plugin.
 
-Check out the demo [here](http://cjbarnaby.com.au/text-descrambler/).
+Check out the interactive demo [here](http://cjbarnaby.com.au/text-descrambler/).
 
 ___
 
 ### Description
-**Text DeScrambler** is a jQuery plugin designed to simulate the cliched movie trope of a sequence of characters being descrambled (usually in the context of a hacker realising the password was the bad guy's wife's birthday backwards, or whatever).
+**Text DeScrambler** is a jQuery plugin designed to simulate the cliched movie trope of a sequence of characters being descrambled (usually in the context of a hacker realising the password was the bad guy's wife's birthday backwards _all along_, or whatever).
 
 ### Usage
 When called on an element with a `text` value, the `scramble` mothod will reveal that value through a process that simulates the 'unscrambling' of each character in the string.
@@ -71,7 +71,7 @@ $element.scramble(duration, interval, characterSet, uppercase)
 - **Optional**
 - **Default**: `20`
 - **Min**: `5`
-- **Max**: `10000`
+- **Max**: `1000`
 
 ##### _characterSet_
 
@@ -96,3 +96,4 @@ $element.scramble(duration, interval, characterSet, uppercase)
 ### Notes
 
 - This plugin works best with monospace fonts.
+- If `(interval / duration / $el.text().length) < 1`, the scrambling sequence will run indefinitely (and never resolve to the element's original text value) .

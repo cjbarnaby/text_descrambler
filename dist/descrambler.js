@@ -9,13 +9,13 @@
     // duration: The time, in ms, over which the function is to execute.
     // If duration is not a valid number or outside min/max (200ms/2000ms), default duration (3000) will be used.
     // NOTE: isNaN does not operate consistently across browsers and browser support for Number.isInteger is poor. Until then, this mess is the best I can do to make the duration argument type-safe.
-    if ((typeof(duration) !== "number") || (duration === NaN) || (duration < 200) || (duration > 20000)) {
+    if ((typeof(duration) !== "number") || (duration === NaN) || (duration < 1000) || (duration > 20000)) {
       duration = 3000;
     }
 
     // interval: If interval is not a valid number or outside min/max (5/10000ms), default interval 20 will be used.
     // NOTE: isNaN does not operate consistently across browsers and browser support for Number.isInteger is poor. Until then, this mess is the best I can do to make the interval argument type-safe.
-    if ((typeof(interval) !== "number") || (interval === NaN) || (interval < 5) || (interval > 10000)) {
+    if ((typeof(interval) !== "number") || (interval === NaN) || (interval < 5) || (interval > 1000)) {
       interval = 20;
     }
 

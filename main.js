@@ -12,7 +12,7 @@ $(document).ready(function() {
 // OTHER GLOBALS
   var optionsOpen = false;
 
-// INIT
+// DEMO SCRAMBLE
   $scramble.scramble(3000, 20, "alphabet", true);
 
 // HELPERS
@@ -20,49 +20,44 @@ $(document).ready(function() {
     return input === 'true' ? true : false;
   };
 
-  var getValues = function() {
-    var values = {};
-    values.duration = Number($(".duration").eq(0).val());
-    values.interval = Number($(".interval").eq(0).val());
-    values.uppercase = toBoolean($("input[name=uppercase]:checked").val());
-    values.characterSet = $("input[name=character-set]:checked").val();
-    return values;
+  var scrambleDemo = function() {
+    input = $input.val() === "" ? "Text deScrambler" : $input.val();
+    duration = Number($(".duration").eq(0).val());
+    interval = Number($(".interval").eq(0).val());
+    uppercase = toBoolean($("input[name=uppercase]:checked").val());
+    characterSet = $("input[name=character-set]:checked").val();
+    $scramble.text(input);
+    $scramble.scramble(duration, interval, characterSet, uppercase);
   };
 
 // LISTENERS
+  // button click (scramble or options)
   $buttons.on("click", function() {
     // SCRAMBLE button
     if ($(this).attr("value") === "scramble") {
-      $scramble.text($input.val() === "" ? "Text deScrambler" : $input.val());
-      var values = getValues();
-      $scramble.scramble(values.duration, values.interval, values.characterSet, values.uppercase);
+      scrambleDemo();
       // OPTIONS button
     } else if ($(this).attr("value") === "options") {
       if (!optionsOpen) {
         $options.animate({
           top: "-90px"
         });
-        optionsOpen = true;
       } else {
         $options.animate({
           top: "-370px"
         });
-        optionsOpen = false;
       }
+      optionsOpen = !optionsOpen;
     }
   });
 
-  // ENTER keydown
+  // enter keydown
   $input.on("keydown", function(e) {
     if (e.keyCode === 13) {
-
       $notice.fadeOut(500, function() {
         $notice.text("");
       });
-      $scramble.text($input.val() === "" ? "Text deScrambler" : $input.val());
-      var values = getValues();
-      $scramble.scramble(values.duration, values.interval, values.characterSet, values.uppercase);
-
+      scrambleDemo();
     } else {
       if ($input.val().length > 18) {
         $notice.text("Just press enter, already.");
@@ -70,6 +65,4 @@ $(document).ready(function() {
       }
     }
   });
-
-
 });
