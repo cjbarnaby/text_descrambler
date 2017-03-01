@@ -14,41 +14,6 @@ When called on an element with a `text` value, the `scramble` mothod will reveal
 $(".elementToScramble").scramble(4000, 20, "alphabet", true);
 ```
 
-#### Installation
-
-1. Copy [the minimized plugin](https://github.com/cjbarnaby/text-descrambler/raw/master/dist/descrambler.min.js) **or** [annotated plugin](https://github.com/cjbarnaby/text-descrambler/raw/master/dist/descrambler.js) to your app's directory:
-```sh
-# EITHER: annotated plugin
-curl https://github.com/cjbarnaby/text-descrambler/raw/master/dist/descrambler.js > descrambler.js
-# OR: minimized plugin
-curl https://github.com/cjbarnaby/text-descrambler/raw/master/dist/descrambler.min.js > descrambler.js
-```
-2. Copy jQuery to your app's directory:
-```sh
-curl https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js > jQuery.js
-```
-3. Create a file for your own custom JavaScript:
-```sh
-touch main.js
-```
-4. Add jQuery and the deScrambler plugin to your HTML:
-```HTML
-<head>
-  <script src="jQuery.js"></script>
-  <script src="dist/descrambler.js"></script>
-  <script src="main.js"></script>
-</head>
-<body>
-  <p>Here's some text</p>
-</body>
-```
-5. Start scrambling! In your custom `main.js` file:
-```js
-$(document).ready(function() {
-  $("p").scramble();
-});
-```
-
 #### Parameters
 
 ```js
@@ -58,27 +23,27 @@ $element.scramble(duration, interval, characterSet, uppercase)
 ##### _duration_
 
 - **Description**: Time, in milliseconds, over which the deScrambling effect will take place.
-- **Type**: Number
+- **Type**: Number.
 - **Optional**.
-- **Default**: `3000`
-- **Min**: `200`
-- **Max**: `20000`
+- **Default**: `3000`.
+- **Min**: `1000`.
+- **Max**: `20000`.
 
 ##### _interval_
 
 - **Description**: Time, in milliseconds, between each successive character being unscrambled.
-- **Type**: Number
-- **Optional**
-- **Default**: `20`
-- **Min**: `5`
-- **Max**: `1000`
+- **Type**: Number.
+- **Optional**.
+- **Default**: `20`.
+- **Min**: `5`.
+- **Max**: `1000`.
 
 ##### _characterSet_
 
 - **Description**: The character set (from a list of pre-defined character set) to use when substituting scrambled characters in the string.
-- **Type**: String
-- **Optional**
-- **Default**: `"all"`
+- **Type**: String.
+- **Optional**.
+- **Default**: `"all"`.
 - **Acceptable parameters**:
   - `"all"` - combination of all character sets.
   - `"alphanumeric"` - all letters and numbers.
@@ -89,11 +54,46 @@ $element.scramble(duration, interval, characterSet, uppercase)
 ##### _uppercase_
 
 - **Description**: Determines whether the substitued scrambled characters are to be uppercase or lowercase.
-- **Type**: Boolean
-- **Optional**
-- **Default**: `true`
+- **Type**: Boolean.
+- **Optional**.
+- **Default**: `true`.
+
+### Installation
+
+- Copy [the minimized plugin](https://github.com/cjbarnaby/text-descrambler/raw/master/dist/descrambler.min.js) **or** [annotated plugin](https://github.com/cjbarnaby/text-descrambler/raw/master/dist/descrambler.js) to your app's directory:
+```sh
+# EITHER: annotated plugin
+curl https://github.com/cjbarnaby/text-descrambler/raw/master/dist/descrambler.js > descrambler.js
+# OR: minimized plugin
+curl https://github.com/cjbarnaby/text-descrambler/raw/master/dist/descrambler.min.js > descrambler.js
+```
+- Copy jQuery to your app's directory:
+```sh
+curl https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js > jQuery.js
+```
+- Create a file for your own custom JavaScript:
+```sh
+touch main.js
+```
+- Add jQuery and the deScrambler plugin to your HTML:
+```HTML
+<head>
+  <script src="jQuery.js"></script>
+  <script src="dist/descrambler.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <p>Here's some text.</p>
+</body>
+```
+- Start scrambling! In your custom `main.js` file:
+```js
+$(document).ready(function() {
+  $("p").scramble();
+});
+```
 
 ### Notes
 
 - This plugin works best with monospace fonts.
-- If `(interval / duration / $el.text().length) < 1`, the scrambling sequence will run indefinitely (and never resolve to the element's original text value) .
+- If `(interval / duration / $el.text().length) < 1`, the scrambling sequence will run indefinitely (and never resolve to the element's original text value).

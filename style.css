@@ -2,6 +2,7 @@ body {
   background-color: rgba(41, 45, 52, 1);
   color: rgba(203, 203, 203, 1);
   font-family: monospace;
+  margin: 0;
 }
 
 .container {
@@ -40,7 +41,6 @@ body {
 
 .buttons-box {
   margin-top: 5px;
-
 }
 
 .button {
@@ -58,10 +58,6 @@ body {
 
 .button:active {
   background-color: rgba(255, 255, 255, 0.4);
-}
-
-.flyoutBox {
-
 }
 
 .notice {
@@ -91,4 +87,20 @@ label {
 
 input {
   margin-top: 10px;
+}
+
+.git-fork {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.portfolio {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
