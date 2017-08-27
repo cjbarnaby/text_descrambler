@@ -1,6 +1,6 @@
 ## Text deScrambler - A jQuery Plugin.
 
-Check out the interactive demo [here](http://cjbarnaby.com.au/text-descrambler/).
+Check out the interactive demo [here](http://cjbarnaby.com.au/text_descrambler/).
 
 ___
 
