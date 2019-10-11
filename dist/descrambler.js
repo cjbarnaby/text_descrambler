@@ -89,10 +89,20 @@
       this.word = word;
       this.len = word.length;
       this.arr = word.split("");
+      this.terminated = false;
+      var self = this;
+      $element.on("click", function(e) {
+        self.terminated = true;
+      });
 
       var magicNumber = parseInt(duration / interval / this.len);
       // this.scramble takes a setInterval timer parameter (necessary to clear the setInterval when the slice iterations have completed). Called every interval milliseconds, calls the replacer function, which returns an array of un/scrambled letters, and re-sets the .text of this.$element
       this.scramble = function(timer) {
+        if (this.terminated) {
+          this.$element.text(word)
+          window.clearInterval(timer);
+          return;
+        }
         this.iteration += 1;
         // Get an array of random characters the same length as the text of the element on which the method is called.
         var scrambledArray = scrambler(this.len);
@@ -117,7 +127,6 @@
     var intervalTimer = window.setInterval(function() {
       text.scramble(intervalTimer);
     }, interval);
-
     return this;
   };
 
