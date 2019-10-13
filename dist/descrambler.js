@@ -90,9 +90,8 @@
       this.len = word.length;
       this.arr = word.split("");
       this.terminated = false;
-      var self = this;
-      $element.on("click", function(e) {
-        self.terminated = true;
+      $element.on("click", (e) => {
+        this.terminated = true;
       });
 
       var magicNumber = parseInt(duration / interval / this.len);
