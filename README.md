@@ -45,12 +45,14 @@ $element.scramble(duration, interval, characterSet, uppercase)
 - **Optional**.
 - **Default**: `"all"`.
 - **Acceptable parameters**:
-  - `"all"` - combination of all character sets.
+  - `"all"` - combination of all character sets, exlcuding emoji.
+  - `"allPlusEmoji"` - combination of all character sets, including emoji
   - `"alphanumeric"` - all letters and numbers.
   - `"alphabet"` - all letters only.
   - `"punctuation"` - punctuation only.
   - `"numbers"` - numbers only.
-
+  - `"emoji"` - emoji (a set of 500 random emojis)
+  
 ##### _uppercase_
 
 - **Description**: Determines whether the substitued scrambled characters are to be uppercase or lowercase.

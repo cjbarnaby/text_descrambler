@@ -44,7 +44,7 @@ $(document).ready(function() {
         });
       } else {
         $options.animate({
-          top: "-370px"
+          top: "-400px"
         });
       }
       optionsOpen = !optionsOpen;
